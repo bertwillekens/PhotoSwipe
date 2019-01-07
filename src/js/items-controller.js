@@ -480,6 +480,9 @@ _registerModule('Controller', {
 
 			holder.el.innerHTML = '';
 			holder.el.appendChild(baseDiv);
+
+			//ADAPTED: added in this hook to facilitate actions after setting the slide content
+			_shout('afterSetSlideContent', index, item);
 		},
 
 		cleanSlide: function( item ) {

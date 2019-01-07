@@ -1,6 +1,6 @@
-/*! PhotoSwipe - v4.1.2 - 2017-04-05
+/*! PhotoSwipe - v4.1.2 - 2019-01-07
 * http://photoswipe.com
-* Copyright (c) 2017 Dmitry Semenov; */
+* Copyright (c) 2019 Dmitry Semenov; */
 (function (root, factory) { 
 	if (typeof define === 'function' && define.amd) {
 		define(factory);
@@ -3171,6 +3171,9 @@ _registerModule('Controller', {
 
 			holder.el.innerHTML = '';
 			holder.el.appendChild(baseDiv);
+
+			//ADAPTED: added in this hook to facilitate actions after setting the slide content
+			_shout('afterSetSlideContent', index, item);
 		},
 
 		cleanSlide: function( item ) {
